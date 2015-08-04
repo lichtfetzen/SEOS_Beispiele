@@ -1,46 +1,46 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+        Funktion zur Ermittlung des Mittelwertes aller Array-Elemente
  */
 
 package modularisierung;
 
-// Scanner für Tastatureingaben importierren
-//import java.util.Scanner;
-
 /**
- *
  * @author w4s1m0t0
  */
 
 public class Beispiel_6 {
-
+    
+    /*
+    main-Methode
+    */
     public static void main(String[] args) {
-
-        // Scanner erzeugen
-        //Scanner sc = new Scanner(System.in);
         
         // Array deklarieren und init
-        int [] mainArray = { 11 , 54 , 845, -574, 62};
+        int [] mainArray = { 1, 2, 2};
         
-        // Ausgabe mit Funktionsaufruf
+        // Ausgabe des Rueckgabewertes der Methode avgArray
         System.out.println("Duchschnitt: " + avgArray(mainArray) );
         
     }
     
-    
-    
-    public static int avgArray ( int [] funcArray)
+    /*
+    Methode:            avgArray (Funktion)
+    Parameter:          Array vom Typ int
+    Rueckgabewert:      Mittelwert
+    */
+    public static int avgArray ( int [] funcArray )
     {
-        int zwischenSumme = 0;
+        long zwischenSumme = 0;                             // Hilfsvariablendeklaration
+        double erg;
         
-        for ( int  x : funcArray)
+        for ( int  x : funcArray)                           // for-each-Schleife durchläuft alle Array-Elemente
         {
-            zwischenSumme += x;
+            zwischenSumme += x;                             // Summiert Werte aller Array-Elemente
         }
-        return zwischenSumme / funcArray.length;
+        
+        erg = (double) zwischenSumme / funcArray.length + 0.5;      // +0.5 fuer kaufmaennisches Runden
+        
+        return (int) erg;                                   // Summe aller Array-Elemente durch Anzahl aller Elemente
     }
-
+   
 }
-
